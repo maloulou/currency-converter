@@ -1,0 +1,9 @@
+<div class="container mt-4">
+  <h2>Current Exchange Rate: EUR/USD = {{ rate | number : "1.2-2" }}</h2>
+  <div class="input-group mb-3">
+    <input type="number" #fixedRate class="form-control" placeholder="Set fixed rate"/>
+    <div class="input-group-append">
+      <button class="btn btn-primary" (click)="setFixedRate(fixedRate.value)">Set Fixed Rate</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,19 @@
+<div class="container mt-4">
+  <div class="form-group">
+    <label for="amount">Amount in {{ currency }}</label>
+    <input
+      id="amount"
+      type="number"
+      class="form-control"
+      [(ngModel)]="amount"
+      (input)="convert()"
+    />
+  </div>
+  <p>
+    Converted Amount: {{ result | number : "1.2-2" }}
+    {{ currency === "EUR" ? "USD" : "EUR" }}
+  </p>
+  <button class="btn btn-secondary mt-2" (click)="switchCurrency()">
+    Switch to {{ currency === "EUR" ? "USD" : "EUR" }}
+  </button>
+</div>

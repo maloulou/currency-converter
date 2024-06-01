@@ -1,0 +1,31 @@
+<div class="container mt-4">
+  <h3>Conversion History</h3>
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>Rate</th>
+        <th>Fixed Rate</th>
+        <th>From Amount</th>
+        <th>From Currency</th>
+        <th>To Amount</th>
+        <th>To Currency</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let entry of historyList">
+        <td>{{ entry.realRate | number : "1.2-2" }}</td>
+        <td>
+          {{
+            entry.fixedRate !== null
+              ? (entry.fixedRate | number : "1.2-2")
+              : "N/A"
+          }}
+        </td>
+        <td>{{ entry.from.amount | number : "1.2-2" }}</td>
+        <td>{{ entry.from.currency }}</td>
+        <td>{{ entry.to.amount | number : "1.2-2" }}</td>
+        <td>{{ entry.to.currency }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
